@@ -9,7 +9,7 @@ import Search from './Search.js';
 class PhotoBrowser extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {currentPhoto: 1, viewStatus: "map"};
+        this.state = {currentPhoto: 1, viewStatus: "view"};
     }
 
     async componentDidMount() {
