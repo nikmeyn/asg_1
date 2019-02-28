@@ -33,6 +33,7 @@ class PhotoBrowser extends React.Component {
     showMap = (id) => {
         this.setState({currentPhoto: id, viewStatus: "map"}, function () {
             console.log(this.state.viewStatus);
+            this.forceUpdate()
         });
     }
 

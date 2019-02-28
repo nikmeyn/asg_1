@@ -6,7 +6,7 @@ const AnyReactComponent = ({ text }) => <div className="marker">{text}</div>;
 class SimpleMap extends Component {
 	constructor(props) {
         super(props);
-        this.state = { zoom: 10 , center: {	lat: this.props.lat, lng:this.props.long },};
+        this.state = { zoom: 10 };
 	}
 
   render() {
@@ -15,7 +15,7 @@ class SimpleMap extends Component {
       <div style={{ height: '400px', width: '100%' }}>
         <GoogleMapReact
           bootstrapURLKeys={{ key:"AIzaSyAxZsj5CCckEJEDAfVOJQPbMe2QQf3xH5s" }}
-          defaultCenter={this.state.center}
+          center={{lat: this.props.lat, lng:this.props.long }}
           defaultZoom={this.state.zoom}
         >
           <AnyReactComponent
