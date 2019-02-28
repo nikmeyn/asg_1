@@ -113,10 +113,10 @@ class App extends Component {
                 <Route path='/about' exact component={About} />
                 <Route path='/home' exact component={Home} />
                 <Route path='/browse' exact render ={ (props) => 
-                    <div> 
+                    <section>
                         <Favorites favList = { this.state.favList } removeFromFavs = {this.removeFromFavs}/> 
                         <PhotoBrowser photos={ this.state.photos } updatePhoto = { this.updatePhoto } addToFavs = { this.addToFavs } filterList = {this.filterList} unfilteredPhotos = { this.state.unfilteredPhotos } /> 
-                    </div> 
+                    </section>
                 } />
                 
 
