@@ -7,7 +7,9 @@ class PhotoThumb extends React.Component {
             <div className="photoBox" onClick = {this.handleViewClick}>
                 <figure>
                     <img src={imgURL} className="photoThumb" title={this.props.photo.title} alt={this.props.photo.title} />
+
                 </figure>
+                <span className="close"></span>
                 <div>
                     <h3>{this.props.photo.title}</h3> 
                     <p>{this.props.photo.city}, {this.props.photo.country}</p> 
@@ -16,6 +18,7 @@ class PhotoThumb extends React.Component {
                     <button onClick = { this.handleMapClick }>🌎</button>
                     <button onClick = { this.handleEditClick }>🖋</button>
                 </div>
+
             </div>
         );
     }
