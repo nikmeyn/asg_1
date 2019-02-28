@@ -2,58 +2,73 @@ import React from "react";
 import PhotoList from './PhotoList.js';
 import EditPhotoDetails from './EditPhotoDetails.js';
 import SinglePhoto from './SinglePhoto.js';
-import ViewMap  from "./ViewMap.js";
+import ViewMap from "./ViewMap.js";
 import Search from './Search.js';
 
 
 class PhotoBrowser extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { currentPhoto: 1 , viewStatus : "map"};
+        this.state = {currentPhoto: 1, viewStatus: "map"};
     }
-    
+
     async componentDidMount() {
         try {
-            
-        }catch (error) {
+
+        } catch (error) {
             console.error(error);
         }
     }
+
     editImageDetails = (id) => {
-        this.setState({ currentPhoto: id , viewStatus: "edit"}, function() {
+        this.setState({currentPhoto: id, viewStatus: "edit"}, function () {
             console.log(this.state.viewStatus);
         });
     }
     viewSinglePhoto = (id) => {
-        this.setState({ currentPhoto: id , viewStatus: "view"}, function() {
+        this.setState({currentPhoto: id, viewStatus: "view"}, function () {
             console.log(this.state.viewStatus);
         });
     }
     showMap = (id) => {
-        this.setState({ currentPhoto: id , viewStatus: "map" }, function() {
+        this.setState({currentPhoto: id, viewStatus: "map"}, function () {
             console.log(this.state.viewStatus);
         });
     }
+
     render() {
         let view;
-        if (this.state.viewStatus === "map"){
-            
-            view = <ViewMap photos = { this.props.unfilteredPhotos } currentPhoto = { this.state.currentPhoto } editImageDetails ={ this.editImageDetails } viewSinglePhoto = { this.viewSinglePhoto } showMap = { this.showMap }/>
-        } else if (this.state.viewStatus === "edit"){
-            view = <EditPhotoDetails photos = { this.props.unfilteredPhotos } currentPhoto = { this.state.currentPhoto } updatePhoto = { this.props.updatePhoto } editImageDetails ={ this.editImageDetails } addToFavs = { this.props.addToFavs } viewSinglePhoto = { this.viewSinglePhoto } showMap = { this.showMap }/>
-        }else if (this.state.viewStatus === "view"){   
-            view = <SinglePhoto photos = { this.props.unfilteredPhotos } currentPhoto = { this.state.currentPhoto } updatePhoto = { this.props.updatePhoto } viewStatus = { this.state.viewStatus } editImageDetails ={ this.editImageDetails } addToFavs = { this.props.addToFavs } viewSinglePhoto = { this.viewSinglePhoto } showMap = { this.showMap }/>
+        if (this.state.viewStatus === "map") {
+
+            view = <ViewMap photos={this.props.unfilteredPhotos} currentPhoto={this.state.currentPhoto}
+                            editImageDetails={this.editImageDetails} viewSinglePhoto={this.viewSinglePhoto}
+                            showMap={this.showMap}/>
+        } else if (this.state.viewStatus === "edit") {
+            view = <EditPhotoDetails photos={this.props.unfilteredPhotos} currentPhoto={this.state.currentPhoto}
+                                     updatePhoto={this.props.updatePhoto} editImageDetails={this.editImageDetails}
+                                     addToFavs={this.props.addToFavs} viewSinglePhoto={this.viewSinglePhoto}
+                                     showMap={this.showMap}/>
+        } else if (this.state.viewStatus === "view") {
+            view = <SinglePhoto photos={this.props.unfilteredPhotos} currentPhoto={this.state.currentPhoto}
+                                updatePhoto={this.props.updatePhoto} viewStatus={this.state.viewStatus}
+                                editImageDetails={this.editImageDetails} addToFavs={this.props.addToFavs}
+                                viewSinglePhoto={this.viewSinglePhoto} showMap={this.showMap}/>
         }
-        
+
         return (
-            <section className="container">
+
+            <div className="container">
                 <article className="photos">
-                    <Search filterList = { this.props.filterList }/>
-                    <PhotoList photos = { this.props.photos } editImageDetails ={ this.editImageDetails } addToFavs = { this.props.addToFavs } viewSinglePhoto = { this.viewSinglePhoto } showMap = { this.showMap }/>    
+                    <Search filterList={this.props.filterList}/>
+
+                    <PhotoList photos={this.props.photos} editImageDetails={this.editImageDetails}
+                               addToFavs={this.props.addToFavs } viewSinglePhoto={this.viewSinglePhoto}
+                               showMap={this.showMap}/>
                 </article>
                 {view}
-            </section> 
+            </div>
         );
     }
 }
+
 export default PhotoBrowser
