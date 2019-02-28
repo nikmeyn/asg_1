@@ -11,10 +11,10 @@ class PhotoThumb extends React.Component {
                 <div>
                     <h3>{this.props.photo.title}</h3> 
                     <p>{this.props.photo.city}, {this.props.photo.country}</p> 
-                    <button onClick = { this.handleViewClick }>View</button>
+                    <button onClick = { this.handleViewClick }>👁</button>
                     <button onClick = { this.handleFavClick }>❤</button>
-                    <button onClick = { this.handleMapClick }>Map</button>
-                    <button onClick = { this.handleEditClick }> Edit </button>
+                    <button onClick = { this.handleMapClick }>🌎</button>
+                    <button onClick = { this.handleEditClick }>🖋</button>
                 </div>
             </div>
         );
