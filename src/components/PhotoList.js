@@ -6,9 +6,9 @@ class PhotoList extends React.Component {
     render() {
         if (this.props.photos.length > 0) {
             return (
-                <article className="photos">
+                <div className="photos">
                     { this.props.photos.map( (p) => <PhotoThumb photo={p} key={p.id} editImageDetails = { this.props.editImageDetails } addToFavs = { this.props.addToFavs } viewSinglePhoto = { this.props.viewSinglePhoto } showMap = { this.props.showMap }/> ) } 
-                </article>
+                </div>
             );
         }else{
             return null

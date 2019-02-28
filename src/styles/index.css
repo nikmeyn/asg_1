@@ -9,17 +9,18 @@
 } */
 
 :root {
-  --list-back: #2b7a78;
+  --list-back: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
   --favorites-back: "black";
-  --details-back: #feffff;
-  --details-box-back: #def2f1;
-  --header-back: #17252A;
-  --button-back: #3aafa9;
+  --details-back: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+  --details-box-back: linear-gradient(to left top, #051937, #004d7a, #008793, #00bf72, #a8eb12);;
+  --header-back: #000000;
+  --button-back: #cecd26;
   --border-color: #c2dde6;
-  --list-box-back: #feffff;
+  --list-box-back: #01A185;
 }
 
 body {
+  background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -31,6 +32,7 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6 {
+  font-family: Menlo;
   font-weight: normal;
   margin: 0;
   font-size: 1.5em;
@@ -50,8 +52,13 @@ code {
   background: var(--header-back);
   color: white;
   padding: 10px;
-}
 
+}
+.sticky{
+  position: fixed;
+  top: 0;
+  width: 100%
+}
 .header-titles h1 {
   font-size: 2em;
 }
@@ -73,13 +80,18 @@ button {
   display: grid;
   grid-template-columns: 47% auto;
   grid-gap: 0;
+
 }
 
 .photos {
   display: grid;
+  border-radius: 20px;
   grid-template-columns: repeat(auto-fit, 250px);
   grid-gap: 5px;
   background-color: var(--list-back);
+  overflow-y: auto;
+  height:100vh;
+
 }
 
 .photoBox {
@@ -98,8 +110,8 @@ button {
 .photoBox button {
   padding: 5px;
   font-size: 0.75em;
-  border-radius: 3px;
   margin: 0;
+  border-radius: 60px;
 }
 .photoBox h3 {
   font-size: 0.85em;

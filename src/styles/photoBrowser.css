@@ -3,7 +3,7 @@
 }
 
 .sliding-background {
-    background: black;a
+    background: black;
     height: 560px;
     width: 5076px;
     animation: slide 60s linear infinite;
