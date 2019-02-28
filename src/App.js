@@ -70,19 +70,38 @@ class App extends Component {
         
         
     }
-    filterList = (filter) => {
+	removeFromFavs = (id) => {
         
-        console.log("at the app filter method");
-        
-        //var unfilteredPhotos = cloneDeep(this.state.photos);
+        //create a deep clone of photos array
+        const copyPhotos = cloneDeep(this.state.favList);
 
+        //find photo to fav in cloned array
+		var updatedFavs = this.state.favList.filter( (p) => { return p.id === id } );
+        
+        //update state
+        this.setState( {favList : updatedFavs} );
+        
+        
+    }
+	removeFromPhotoList = (id) => {
+        
+        //create a deep clone of photos array
+        const copyPhotos = cloneDeep(this.state.photos);
+
+        //find photo to fav in cloned array
+		var updatedPhotos = this.state.favList.filter( (p) => { return p.id === id } );
+        
+        //update state
+        this.setState( { favList : updatedPhotos } );
+        
+        
+    }
+    filterList = (filter) => {
+		
         var filteredPhotos = this.state.unfilteredPhotos.filter( (p) => { return p.city.toLowerCase().includes(filter) || p.country.toLowerCase().includes(filter) } );
         
         console.log(filteredPhotos);
-        /*
-        function(item){
-            return item.toLowerCase().search(event.target.value.toLowerCase()) !== -1;
-        });*/
+        
         this.setState( {photos : filteredPhotos} );
     }
     
