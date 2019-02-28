@@ -57,16 +57,16 @@ class PhotoBrowser extends React.Component {
 
         return (
 
-            <div className="container">
-                <article className="photos">
-                    <Search filterList={this.props.filterList}/>
+            <section>
 
+                <Search filterList={this.props.filterList}/>
+                <div className="container">
                     <PhotoList photos={this.props.photos} editImageDetails={this.editImageDetails}
-                               addToFavs={this.props.addToFavs } viewSinglePhoto={this.viewSinglePhoto}
+                               addToFavs={this.props.addToFavs} viewSinglePhoto={this.viewSinglePhoto}
                                showMap={this.showMap}/>
-                </article>
-                {view}
-            </div>
+                    {view}
+                </div>
+            </section>
         );
     }
 }

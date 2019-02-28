@@ -65,7 +65,7 @@ button {
   color: white;
   padding: 10px;
   border-radius:5px;
-  font-size: 1em;  
+  font-size: 1em;
 }
 
 .container {
@@ -92,7 +92,7 @@ button {
   padding: 0.5rem;
   place-self: center center;
   justify-content: space-evenly;
-  
+
 
 }
 .photoBox button {
@@ -110,7 +110,7 @@ button {
   margin: 0.25em 0 0.25em 0;
 }
 .photoBox button {
-  margin: 0 0.5em;
+  margin: 0.3em;
   min-width: 2.5em;
 
 }
@@ -128,7 +128,7 @@ img.photoThumb {
 .detailsPhotoBox {
   box-sizing: border-box;
   margin: 0.75em;
- 
+
   padding: 1em;
   background-color: var(--details-box-back)
 }
