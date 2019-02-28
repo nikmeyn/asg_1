@@ -31,6 +31,7 @@ class PhotoThumb extends React.Component {
     }
     handleMapClick = (e) => {
         this.props.showMap(this.props.photo.id);
+        e.stopPropagation();
     }
 }
 export default PhotoThumb
