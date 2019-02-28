@@ -13,6 +13,9 @@ class FavoriteItem extends React.Component {
             </div>
         );
     }
+	handleDeleteClick = (e) => {
+        this.props.removeFromFavs(this.props.photo.id);
+    }
 
 }
 
