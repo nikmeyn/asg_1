@@ -140,7 +140,6 @@ img.photoThumb {
 .detailsPhotoBox {
   box-sizing: border-box;
   margin: 0.75em;
-
   padding: 1em;
   background-color: var(--details-box-back)
 }
@@ -148,11 +147,14 @@ img.photoThumb {
 figure {
   margin: 0;
   padding: 0;
+
 }
 legend {
   font-weight: bold;
   color: var(--list-back);
   font-size: 1.2em;
+  font-family: Menlo;
+  text-align: center;
 }
 .photoForm img {
    width: 100%
