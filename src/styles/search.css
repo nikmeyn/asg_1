@@ -3,8 +3,9 @@
     background-color: #2b7a78;
  }
 input[type=text] {
-    width: 130px;
-    height: 70px;
+    font-family: Menlo;
+    width: 40%;
+    height: 50px;
     size: 40px;
     -webkit-transition: width 0.4s ease-in;
     transition: width 0.4s ease-in-out;
