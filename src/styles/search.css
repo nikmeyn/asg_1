@@ -1,11 +1,12 @@
 .searchBox{
      display:grid;
+    background-color: #2b7a78;
  }
 input[type=text] {
     width: 130px;
     height: 70px;
     size: 40px;
-    -webkit-transition: width 0.4s ease-in-out;
+    -webkit-transition: width 0.4s ease-in;
     transition: width 0.4s ease-in-out;
 }
 input[type=text]:focus {
