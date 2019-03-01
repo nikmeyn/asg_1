@@ -4,7 +4,7 @@ import {JSZip, saveAs} from "jszip";
 
 class ZipFavs extends React.Component {
     render() {
-        return (
+        return (
 			<div className="photoFave wrapper">
 				<button className="photoThumb" onClick = { this.handleDownloadClick }>Download</button>
 			</div>
@@ -19,6 +19,7 @@ class ZipFavs extends React.Component {
 				throw err; // or handle the error
 			}
 			var zip = new JSZip(data);
+			console.log("downloaded files"+ zip);
 		});
 		
 		/*var zip = JSZip;
