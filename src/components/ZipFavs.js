@@ -4,11 +4,11 @@ import {JSZip, saveAs} from "jszip";
 
 class ZipFavs extends React.Component {
     render() {
-        return (
+        return (
 			<div className="photoFave wrapper">
 				<button className="photoThumb" onClick = { this.handleDownloadClick }>Download</button>
 			</div>
-		)
+		);
 	}
 	
 

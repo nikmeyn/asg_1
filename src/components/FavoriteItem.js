@@ -8,7 +8,8 @@ class FavoriteItem extends React.Component {
                 <figure>
                     <img src={imgURL} className="photoThumb" title={this.props.favPhoto.title}
                          alt={this.props.favPhoto.title}/>
-                    <span onClick={this.handleRemoveFavorite} className="close"></span>
+                    <button className="photoThumb" onClick = { this.handleDownloadClick }>Download</button>
+                    {/*<span onClick={this.handleRemoveFavorite} className="close"></span>*/}
                 </figure>
             </div>
         );
