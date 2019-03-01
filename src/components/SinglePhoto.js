@@ -24,12 +24,20 @@ class ViewSinglePhoto extends React.Component {
                             <h2>Country</h2>
                             <label> { photo.country } </label>
                         </form>
+						<button onClick = { this.handleEditClick } >Edit</button>
+						<button onClick = { this.handleMapClick } >Map</button>
                     </div>
                 </article>
             );
         }else {
             return null;
         }
+    }
+    handleEditClick = (e) => {
+        this.props.editImageDetails(this.props.currentPhoto);
+    }
+    handleMapClick = (e) => {
+        this.props.showMap(this.props.currentPhoto);
     }
 }
 export default ViewSinglePhoto

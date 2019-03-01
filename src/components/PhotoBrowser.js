@@ -36,18 +36,13 @@ class PhotoBrowser extends React.Component {
         if (this.state.viewStatus === "map") {
 
             view = <ViewMap photos={this.props.unfilteredPhotos} currentPhoto={this.state.currentPhoto}
-                            editImageDetails={this.editImageDetails} viewSinglePhoto={this.viewSinglePhoto}
-                            showMap={this.showMap}/>
+                            editImageDetails={this.editImageDetails} viewSinglePhoto={this.viewSinglePhoto}/>
         } else if (this.state.viewStatus === "edit") {
             view = <EditPhotoDetails photos={this.props.unfilteredPhotos} currentPhoto={this.state.currentPhoto}
-                                     updatePhoto={this.props.updatePhoto} editImageDetails={this.editImageDetails}
-                                     addToFavs={this.props.addToFavs} viewSinglePhoto={this.viewSinglePhoto}
-                                     showMap={this.showMap}/>
+                                     updatePhoto={this.props.updatePhoto} addToFavs={this.props.addToFavs} viewSinglePhoto={this.viewSinglePhoto} showMap={this.showMap}/>
         } else if (this.state.viewStatus === "view") {
             view = <SinglePhoto photos={this.props.unfilteredPhotos} currentPhoto={this.state.currentPhoto}
-                                updatePhoto={this.props.updatePhoto} viewStatus={this.state.viewStatus}
-                                editImageDetails={this.editImageDetails} addToFavs={this.props.addToFavs}
-                                viewSinglePhoto={this.viewSinglePhoto} showMap={this.showMap}/>
+                                editImageDetails={this.editImageDetails} showMap={this.showMap}/>
         }
 
         return (

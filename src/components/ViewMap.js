@@ -24,6 +24,8 @@ class ViewMap extends React.Component {
                             <label>Country</label>
                             <label> { photo.country } </label>
                         </form>
+						<button onClick = { this.handleViewClick } >View</button>
+						<button onClick = { this.handleEditClick } >Map</button>
                     </div>
                 </article>
             );
@@ -31,5 +33,11 @@ class ViewMap extends React.Component {
             return null;
         }
     }
+	handleViewClick = (e) => {
+        this.props.viewSinglePhoto(this.props.currentPhoto);
+    }
+    handleEditClick = (e) => {
+        this.props.editImageDetails(this.props.currentPhoto);
+	}
 }
 export default ViewMap

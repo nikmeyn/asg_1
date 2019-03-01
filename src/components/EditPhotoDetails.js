@@ -26,6 +26,8 @@ class EditPhotoDetails extends React.Component {
                             <label>Longitude</label>
                             <input type='text' name='country' value = { photo.longitude } onChange={this.handleChange} />
                         </form>
+						<button onClick = { this.handleViewClick } >View</button>
+						<button onClick = { this.handleMapClick } >Map</button>
                     </div>
                 </article>
             );
@@ -33,7 +35,13 @@ class EditPhotoDetails extends React.Component {
             return null;
         }
     }
-    handleChange = e => {
+	handleViewClick = (e) => {
+        this.props.viewSinglePhoto(this.props.currentPhoto);
+    }
+    handleMapClick = (e) => {
+        this.props.showMap(this.props.currentPhoto);
+    }
+    handleChange = (e) => {
         
         // find the current photo in our photo array
         const id = this.props.currentPhoto;
