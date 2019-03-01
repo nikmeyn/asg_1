@@ -8,12 +8,12 @@ class FavoriteItem extends React.Component {
                 <figure>
                     <img src={imgURL} className="photoThumb" title={this.props.favPhoto.title}
                          alt={this.props.favPhoto.title}/>
-                    <span onClick={this.props.onClick} className="close"></span>
+                    <span onClick={this.handleRemoveFavorite} className="close"></span>
                 </figure>
             </div>
         );
     }
-	handleDeleteClick = (e) => {
+	handleRemoveFavorite = (e) => {
         this.props.removeFromFavs(this.props.photo.id);
     }
 

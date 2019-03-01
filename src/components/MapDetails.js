@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = ({ text }) => <div className="marker">{text}</div>;
+const AnyReactComponent = () => <div class="pin"></div>;
 
 class SimpleMap extends Component {
 	constructor(props) {

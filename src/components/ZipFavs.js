@@ -1,58 +1,89 @@
-
 import React from "react";
 import JSZipUtils from "jszip-utils";
-import JSZip from "jszip";
+import {JSZip, saveAs} from "jszip";
 
+class ZipFavs extends React.Component {
+    render() {
+        return (
+			<div className="photoFave wrapper">
+				<button className="photoThumb" onClick = { this.handleDownloadClick }>Download</button>
+			</div>
+		)
+	}
+	
 
-var Promise = window.Promise;
-if (!Promise) {
-    Promise = JSZip.external.Promise;
+	handleDownloadClick = () => {
+		
+		JSZipUtils.getBinaryContent(`https://storage.googleapis.com/funwebdev-3rd-travel/large/${this.props.favList[0].path}`, function (err, data){
+			if(err) {
+				throw err; // or handle the error
+			}
+			var zip = new JSZip(data);
+		});
+		
+		/*var zip = JSZip;
+		zip.file("Hello.txt", "Hello world\n");
+
+		
+		zip.generateAsync({type:"blob"}).then(function (blob) { 
+			saveAs(blob, "favorites.zip");                         
+		}, function (err) {
+			console.log(err);		
+		});*/
+	}
 }
+export default ZipFavs	
 
-function urlToPromise(url) {
-    return new Promise(function(resolve, reject) {
-        JSZipUtils.getBinaryContent(url, function (err, data) {
-            if(err) {
-                reject(err);
-            } else {
-                resolve(data);
-            }
-        });
-    });
-}
+	/*var Promise = window.Promise;
+	if (!Promise) {
+		Promise = JSZip.external.Promise;
+	}
 
-var $form = $("#download_form").on("submit", function () {
+	function urlToPromise(url) {
+		return new Promise(function(resolve, reject) {
+			JSZipUtils.getBinaryContent(url, function (err, data) {
+				if(err) {
+					reject(err);
+				} else {
+					resolve(data);
+				}
+			});
+		});
+	}
 
-    resetMessage();
+	var $form = $("#download_form").on("submit", function () {
 
-    var zip = new JSZip();
+		resetMessage();
 
-    // find every checked item
-    $(this).find(":checked").each(function () {
-        var $this = $(this);
-        var url = $this.data("url");
-        var filename = url.replace(/.*\//g, "");
-        zip.file(filename, urlToPromise(url), {binary:true});
-    });
+		var zip = new JSZip();
 
-    // when everything has been downloaded, we can trigger the dl
-    zip.generateAsync({type:"blob"}, function updateCallback(metadata) {
-        var msg = "progression : " + metadata.percent.toFixed(2) + " %";
-        if(metadata.currentFile) {
-            msg += ", current file = " + metadata.currentFile;
-        }
-        showMessage(msg);
-        updatePercent(metadata.percent|0);
-    })
-    .then(function callback(blob) {
+		// find every checked item
+		$(this).find(":checked").each(function () {
+			var $this = $(this);
+			var url = $this.data("url");
+			var filename = url.replace(/.*\//g, "");
+			zip.file(filename, urlToPromise(url), {binary:true});
+		});
 
-        // see FileSaver.js
-        saveAs(blob, "example.zip");
+		// when everything has been downloaded, we can trigger the dl
+		zip.generateAsync({type:"blob"}, function updateCallback(metadata) {
+			var msg = "progression : " + metadata.percent.toFixed(2) + " %";
+			if(metadata.currentFile) {
+				msg += ", current file = " + metadata.currentFile;
+			}
+			showMessage(msg);
+			updatePercent(metadata.percent|0);
+		})
+		.then(function callback(blob) {
 
-        showMessage("done !");
-    }, function (e) {
-        showError(e);
-    });
+			// see FileSaver.js
+			saveAs(blob, "example.zip");
 
-    return false;
-});
+			showMessage("done !");
+		}, function (e) {
+			showError(e);
+		});
+
+		return false;
+	});
+}*/

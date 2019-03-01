@@ -21,20 +21,14 @@ class PhotoBrowser extends React.Component {
     }
 
     editImageDetails = (id) => {
-        this.setState({currentPhoto: id, viewStatus: "edit"}, function () {
-            console.log(this.state.viewStatus);
-        });
+        this.setState({currentPhoto: id, viewStatus: "edit"}, function () { });
     }
     viewSinglePhoto = (id) => {
-        this.setState({currentPhoto: id, viewStatus: "view"}, function () {
-            console.log(this.state.viewStatus);
-        });
+        this.setState({currentPhoto: id, viewStatus: "view"}, function () { });
     }
     showMap = (id) => {
         this.setState({currentPhoto: id, viewStatus: "map"}, function () {
-            console.log(this.state.viewStatus);
-            this.forceUpdate()
-        });
+            this.forceUpdate() });
     }
 
     render() {
