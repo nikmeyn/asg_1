@@ -15,13 +15,13 @@ class ViewSinglePhoto extends React.Component {
                         <form className="photoForm">
                             <legend>View Photo Details</legend>
                             <img src = { imgURL+photo.path } alt = { photo.title } />
-                            <h2>Title</h2>
+                            <h2>Title:</h2>
                             <label> { photo.title } </label>
-                            <h2>Description</h2>
+                            <h2>Description:</h2>
                             <label> { photo.description } </label>
-                            <h2>City</h2>
+                            <h2>City:</h2>
                             <label> { photo.city } </label>
-                            <h2>Country</h2>
+                            <h2>Country:</h2>
                             <label> { photo.country } </label>
                         </form>
 						<button onClick = { this.handleEditClick } >Edit</button>

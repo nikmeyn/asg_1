@@ -15,15 +15,15 @@ class EditPhotoDetails extends React.Component {
                         <form className="photoForm">
                             <legend>Edit Photo Details</legend>
                             <img src = { imgURL+photo.path } alt = { photo.title } onChange={this.handleChange} />
-                            <label>Title</label>
+                            <label>Title:</label>
                             <input type='text' name='title' value = { photo.title } onChange={this.handleChange} />
-                            <label>City</label>
+                            <label>City:</label>
                             <input type='text' name='city' value = { photo.city } onChange={this.handleChange} />
-                            <label>Country</label>
+                            <label>Country:</label>
                             <input type='text' name='country' value = { photo.country } onChange={this.handleChange} />
-                            <label>Latitude</label>
+                            <label>Latitude:</label>
                             <input type='text' name='country' value = { photo.latitude } onChange={this.handleChange} />
-                            <label>Longitude</label>
+                            <label>Longitude:</label>
                             <input type='text' name='country' value = { photo.longitude } onChange={this.handleChange} />
                         </form>
 						<button onClick = { this.handleViewClick } >View</button>

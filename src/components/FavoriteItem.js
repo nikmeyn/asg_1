@@ -14,7 +14,8 @@ class FavoriteItem extends React.Component {
         );
     }
 	handleRemoveFavorite = (e) => {
-        this.props.removeFromFavs(this.props.photo.id);
+		console.log("remove fav");
+        this.props.removeFromFavs(this.props.favPhoto.id);
     }
 
 }

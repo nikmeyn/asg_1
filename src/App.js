@@ -72,11 +72,11 @@ class App extends Component {
     }
 	removeFromFavs = (id) => {
         
+		console.log("in app rem favs");
         //create a deep clone of photos array
-        const copyPhotos = cloneDeep(this.state.favList);
 
         //find photo to fav in cloned array
-		var updatedFavs = this.state.favList.filter( (p) => { return p.id === id } );
+		var updatedFavs = this.state.favList.filter( (p) => { return p.id !== id } );
         
         //update state
         this.setState( {favList : updatedFavs} );
@@ -89,10 +89,10 @@ class App extends Component {
         const copyPhotos = cloneDeep(this.state.photos);
 
         //find photo to fav in cloned array
-		var updatedPhotos = this.state.favList.filter( (p) => { return p.id === id } );
+		var updatedPhotos = this.state.favList.filter( (p) => { return p.id !== id } );
         
         //update state
-        this.setState( { favList : updatedPhotos } );
+        this.setState( { photos : updatedPhotos } );
         
         
     }

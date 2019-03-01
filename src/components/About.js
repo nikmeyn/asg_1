@@ -16,6 +16,7 @@ class About extends React.Component {
 						<ul>jszip-utils</ul>
 						<ul>Paletton for color scheme</ul>
 						<ul>Splash page thanks to <a href='https://source.unsplash.com/'>Unsplash Source</a></ul>
+						<ul><a href='https://source.unsplash.com/'>StackOverflow</a></ul>
                 </div>
             </div>
         );

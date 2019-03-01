@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 
-const AnyReactComponent = () => <div class="pin"></div>;
+const Marker = () => <div className="pin"></div>;
 
 class SimpleMap extends Component {
 	constructor(props) {
@@ -18,10 +18,7 @@ class SimpleMap extends Component {
           center={{lat: this.props.lat, lng:this.props.long }}
           defaultZoom={this.state.zoom}
         >
-          <AnyReactComponent
-            lat={this.props.lat}
-            lng={this.props.long}
-            text={this.props.title}
+          <Marker lat={this.props.lat} lng={this.props.long}
           />
         </GoogleMapReact>
       </div>
