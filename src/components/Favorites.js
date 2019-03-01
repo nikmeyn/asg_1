@@ -7,9 +7,11 @@ class Favorites extends React.Component {
     render() {
         if (this.props.favList.length > 0) {
             return (
+
                 <article className="favorites">
                     { this.props.favList.map( (p) => <FavoriteItem favPhoto={p} key={p.id} removeFromFavs= {this.props.removeFromFavs}/> )} 
-					<ZipFavs favList = {this.props.favList}/>
+					{/*<ZipFavs favList = {this.props.favList}/>*/}
+
                 </article>
             );
         }else{
