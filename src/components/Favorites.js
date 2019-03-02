@@ -20,11 +20,9 @@ class Favorites extends React.Component {
                     <Collapse isOpen={this.state.collapse}>
                         <article className="favorites">
 
-
                             {this.props.favList.map((p) => <FavoriteItem favPhoto={p} key={p.id}
                                                                          removeFromFavs={this.props.removeFromFavs}/>)}
                             <ZipFavs favList={this.props.favList}/>
-
 
                         </article>
                     </Collapse>

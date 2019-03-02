@@ -1,4 +1,4 @@
-.photoFave {
+.photoBox {
     position: relative;
     width: 100%;
 }
@@ -9,34 +9,46 @@
     height: auto;
 }
 
-.overlay {
+.overlay2{
+    /*position: absolute;*/
+    /*background-color: #a8eb12;*/
+    /*bottom: 0;*/
+    /*left: 0;*/
+    /*right: 0;*/
+    /*overflow: hidden;*/
+    /*width: 20%;*/
+    /*height: 20%;*/
     position: absolute;
-    background: #a8eb12;
-    opacity: 30%;
+    background-color: #a8eb12;
+    top: 8px;
+    right: 16px;
     bottom: 0;
     left: 0;
-    right: 0;
+    /*right: 0;*/
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    width: 10%;
+    height: 10%;
     -webkit-transform: scale(0);
     -ms-transform: scale(0);
     transform: scale(0);
     -webkit-transition: .3s ease;
     transition: .3s ease;
+
+
 }
 
-.photoFave:hover .overlay {
+.photoBox:hover .overlay2 {
     -webkit-transform: scale(1);
     -ms-transform: scale(1);
     transform: scale(1);
 }
 
-.text {
+.text2 {
     color: white;
     font-size: 20px;
     position: absolute;
     top: 50%;
+    right:100%;
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
