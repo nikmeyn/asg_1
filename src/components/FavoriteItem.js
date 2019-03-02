@@ -9,10 +9,8 @@ class FavoriteItem extends React.Component {
                     <img className="image" src={imgURL} className="photoThumb" title={this.props.favPhoto.title}
                          alt={this.props.favPhoto.title}/>
                     <div className="overlay">
-                        <div className="text">Remove</div>
+                        <div onClick={this.handleRemoveFavorite}  className="text">Remove</div>
                     </div>
-                    {/*<button className="photoThumb" onClick = {this.handleRemoveFavorite }>Remove</button>*/}
-                    {/*<span onClick={this.handleRemoveFavorite} className="close"></span>*/}
                 </figure>
             </div>
         );
