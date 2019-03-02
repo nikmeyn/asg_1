@@ -11,7 +11,7 @@ class Favorites extends React.Component {
         this.state = {collapse: true};
     }
 
-
+    //rendering the favourites list
     render() {
         if (this.props.favList.length > 0) {
             return (
