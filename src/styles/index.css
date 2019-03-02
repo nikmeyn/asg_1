@@ -215,3 +215,7 @@ legend {
   width:20px;
   cursor:pointer;
 }
+.photoFave .photoThumb .after {
+  display: block;
+  background: rgba(0, 0, 0, .6);
+}
